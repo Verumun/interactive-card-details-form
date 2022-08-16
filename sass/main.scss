@@ -1,0 +1,211 @@
+@import 'abstracts/variables';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hide{
+    display: none;
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+button{
+    border: none;
+    background-color: hsl(278, 94%, 30%);
+    padding: 1rem;
+    width: 100%;
+    border-radius: .5rem;
+    color: $White;
+    margin-top: 2.5rem;
+    text-transform: capitalize;
+}
+
+
+.card-header{
+    background-image: url(../images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 14rem;
+    // width: 100%;
+
+    .card-container{
+        position: relative;
+        max-width: 400px;
+        margin: auto;
+
+        .back-card, .front-card{
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 18rem;
+            height: 10rem;
+            border-radius: .5rem;
+        }
+        .back-card{
+            background-image: url(../images/bg-card-back.png);
+            right: 1rem;
+            top: 2rem;
+
+            .cvv{
+                position: absolute;
+                top: 4.4rem;
+                right: 2rem;
+                font-size: .7rem;
+                color: $White;
+            }
+
+        }
+
+        .front-card{
+            background-image: url(../images/bg-card-front.png);
+            top: 7.6rem;
+            left: 1rem;
+            // padding: 2rem;
+            // border: 2px solid black; 
+
+            &-content{
+                margin: auto 1rem;
+                color: $White;
+
+                .circle-container{
+                    padding-top: 1rem;
+                    padding-bottom: 2rem;
+                    img{
+                        width: 3.5rem;
+                    }
+                }
+
+                .card-number{
+                    text-align: center;
+                    font-size: 1.2rem;
+                    // color: $White;
+                    letter-spacing: 2px;
+                    
+                    
+                }
+
+                .card-details{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.form-wrapper{
+    margin-top: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    // max-width: 40rem;
+    // margin: 6rem 1rem;
+    // width: 100%;
+    // overflow: hidden;
+
+    form{
+
+        // width: 100%;
+
+        h3{
+            text-transform: uppercase;
+            margin-top: 1rem;
+
+        }
+
+        .input-control{
+            margin-top: 1rem;
+            input{
+                width: 95%;
+                display: block;
+                border-radius: .5rem;
+                height: 2.5rem;
+                border: 1px solid $Light-grayish-violet;
+                padding-left: 1rem;
+                // outline: 3px solid $Dark-grayish-violet;
+    
+                // &::placeholder{
+                //     padding-left: 2rem;
+                // }
+            }
+        }
+
+        .grid-section{
+            display: flex;
+            // gap: rem;
+
+            .exp-date{
+                .input-wrapper{
+                    display: flex;
+                    gap: 1rem;
+                    
+                    input{
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    aside{
+        // margin-top: 6rem;
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .message{
+            line-height: 2.3;
+
+            p{
+                color: $Dark-grayish-violet;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 800px){
+    main{
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+
+    .card-header{
+        background-image: url(../images/bg-main-desktop.png);
+        height: 100vh;
+
+        .card-container{
+
+            .back-card, .front-card{
+                background-size: cover;
+                width: 35rem;
+                height: 17rem;
+            }
+
+            .back-card{
+                top: 28rem;
+                left: 5rem;
+            }
+
+            .front-card{
+                top: 5rem;
+                left: 0;
+            }
+        }
+    }
+
+    .form-wrapper{
+        width: 25rem;
+        margin: 8rem auto;
+        padding: 0 5rem;
+    }
+}
