@@ -10,8 +10,16 @@
     display: none;
 }
 
+input[type='text'],
+input[type='number'],
+input[type='password'],
+textarea{
+    font-size: 16px;
+}
+
 input{
     box-sizing: border-box;
+    
 
     &::placeholder{
         font-size: 1rem;
