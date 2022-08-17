@@ -107,8 +107,10 @@ button{
                     font-size: 1.2rem;
                     // color: $White;
                     letter-spacing: 2px;
+                    text-decoration: none;
+                    color: #fff;
                     
-                    
+                     
                 }
 
                 .card-details{
@@ -152,7 +154,7 @@ button{
 
             &.error input{
                 border-color: $red;
-                outline-color: $red;
+                outline-color: $red; 
             }
 
             &.success input{
@@ -175,10 +177,10 @@ button{
                 //     padding-left: 2rem;
                 // }
 
-                &:focus{
-                    outline: 1px solid $grayish-blue;
-                    transition: .5s ease;
-                }
+                // &:focus{
+                //     outline: 1px solid $grayish-blue;
+                //     transition: .5s ease;
+                // }
             }
 
            
