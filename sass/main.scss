@@ -10,6 +10,16 @@
     display: none;
 }
 
+input{
+    box-sizing: border-box;
+
+    &::placeholder{
+        font-size: 1rem;
+        font-family: 'Space Grotesk', sans-serif;
+        color: $Light-grayish-violet;
+    }
+}
+
 body{
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -17,7 +27,8 @@ body{
 button{
     border: none;
     background-color: hsl(278, 94%, 30%);
-    padding: 1rem;
+    padding: 1.1rem 0;
+    font-size: 1.2rem;
     width: 100%;
     border-radius: .5rem;
     color: $White;
@@ -47,6 +58,7 @@ button{
             width: 18rem;
             height: 10rem;
             border-radius: .5rem;
+            transition: all 350ms ease-in-out;
         }
         .back-card{
             background-image: url(../images/bg-card-back.png);
@@ -95,6 +107,10 @@ button{
                     display: flex;
                     justify-content: space-between;
                     margin-top: 1rem;
+                    // color: $Dark-grayish-violet;
+                    color: $Light-grayish-violet;
+                    text-transform: uppercase;
+                    font-size: .9rem;
                 }
             }
         }
@@ -102,7 +118,7 @@ button{
 }
 
 .form-wrapper{
-    margin-top: 6rem;
+    margin-top: 7rem;
     margin-left: 1rem;
     margin-right: 1rem;
     // max-width: 40rem;
@@ -112,34 +128,60 @@ button{
 
     form{
 
-        // width: 100%;
+        max-width:30rem;
+        margin: auto;
 
         h3{
             text-transform: uppercase;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
+            letter-spacing: 0.1rem;
+            font-size: .9rem;
 
         }
 
         .input-control{
-            margin-top: 1rem;
+            margin-top: .6rem;
+
+            &.error input{
+                border-color: $red;
+                outline-color: $red;
+            }
+
+            &.success input{
+                border-color: $green;
+                outline-color: $green;
+            }
+
+
             input{
-                width: 95%;
+                width: 100%;
                 display: block;
                 border-radius: .5rem;
-                height: 2.5rem;
-                border: 1px solid $Light-grayish-violet;
+                height: 3rem;
+                border: 2px solid $Light-grayish-violet;
                 padding-left: 1rem;
+                // margin: auto;
                 // outline: 3px solid $Dark-grayish-violet;
     
                 // &::placeholder{
                 //     padding-left: 2rem;
                 // }
+
+                &:focus{
+                    outline: 1px solid $grayish-blue;
+                    transition: .5s ease;
+                }
             }
+
+           
         }
 
         .grid-section{
-            display: flex;
-            // gap: rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            // width: 95%;
+            // margin: auto;
 
             .exp-date{
                 .input-wrapper{
@@ -147,7 +189,7 @@ button{
                     gap: 1rem;
                     
                     input{
-                        width: 3rem;
+                        width: 5rem;
                     }
                 }
             }
@@ -172,11 +214,28 @@ button{
     }
 }
 
+@media screen and (min-width:650px){
+    .card-header{
+        .card-container{
+            max-width: 80%;
+            .back-card{
+                right: 2rem;
+                top: 2rem;
+            }
 
-@media screen and (min-width: 800px){
+            .front-card{
+                left: 2rem;
+                top: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
     main{
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 30% 70%;
+        gap: 2rem;
     }
 
     .card-header{
@@ -187,25 +246,71 @@ button{
 
             .back-card, .front-card{
                 background-size: cover;
-                width: 35rem;
-                height: 17rem;
+                width: 23rem;
+                height: 13rem;
             }
 
             .back-card{
                 top: 28rem;
                 left: 5rem;
+
+                .cvv{
+                    top: 6rem;
+                }
             }
 
             .front-card{
-                top: 5rem;
+                top: 13rem;
                 left: 0;
+                left: 1rem;
+
+                &-content{
+                    margin: 1rem 2rem;
+
+                    .circle-container{
+                        padding-bottom: 3rem;
+                        img{width: 4rem;}
+                    }
+
+                    .card-number{
+                        text-align: left;
+                    }
+                }
             }
         }
     }
 
     .form-wrapper{
         width: 25rem;
-        margin: 8rem auto;
+        margin: 14rem auto;
         padding: 0 5rem;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .card-header{
+        .card-container{
+            .back-card, .front-card{
+                width: 27rem;
+                height: 14rem; 
+                transition: all 350ms ease-in-out;
+            }
+
+            .back-card{
+                left: 9rem;
+
+                .cvv{
+                    top: 6.8rem;
+                    right: 3rem;
+                }
+                
+            }
+
+            .front-card{
+                left: 5rem;
+                // transition: left 250ms ease-in; 
+                
+            }
+        }
     }
 }

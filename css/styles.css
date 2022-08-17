@@ -6,13 +6,21 @@
 .hide {
   display: none; }
 
+input {
+  box-sizing: border-box; }
+  input::placeholder {
+    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #dedddf; }
+
 body {
   font-family: 'Space Grotesk', sans-serif; }
 
 button {
   border: none;
   background-color: #600594;
-  padding: 1rem;
+  padding: 1.1rem 0;
+  font-size: 1.2rem;
   width: 100%;
   border-radius: .5rem;
   color: white;
@@ -36,7 +44,8 @@ button {
       background-size: contain;
       width: 18rem;
       height: 10rem;
-      border-radius: .5rem; }
+      border-radius: .5rem;
+      transition: all 350ms ease-in-out; }
     .card-header .card-container .back-card {
       background-image: url(../images/bg-card-back.png);
       right: 1rem;
@@ -66,31 +75,41 @@ button {
         .card-header .card-container .front-card-content .card-details {
           display: flex;
           justify-content: space-between;
-          margin-top: 1rem; }
+          margin-top: 1rem;
+          color: #dedddf;
+          text-transform: uppercase;
+          font-size: .9rem; }
 
 .form-wrapper {
-  margin-top: 6rem;
+  margin-top: 7rem;
   margin-left: 1rem;
   margin-right: 1rem; }
-  .form-wrapper form h3 {
-    text-transform: uppercase;
-    margin-top: 1rem; }
-  .form-wrapper form .input-control {
-    margin-top: 1rem; }
-    .form-wrapper form .input-control input {
-      width: 95%;
-      display: block;
-      border-radius: .5rem;
-      height: 2.5rem;
-      border: 1px solid #dedddf;
-      padding-left: 1rem; }
-  .form-wrapper form .grid-section {
-    display: flex; }
-    .form-wrapper form .grid-section .exp-date .input-wrapper {
-      display: flex;
+  .form-wrapper form {
+    max-width: 30rem;
+    margin: auto; }
+    .form-wrapper form h3 {
+      text-transform: uppercase;
+      margin-top: 1.2rem;
+      letter-spacing: 0.1rem;
+      font-size: .9rem; }
+    .form-wrapper form .input-control {
+      margin-top: .6rem; }
+      .form-wrapper form .input-control input {
+        width: 100%;
+        display: block;
+        border-radius: .5rem;
+        height: 3rem;
+        border: 2px solid #dedddf;
+        padding-left: 1rem; }
+    .form-wrapper form .grid-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem; }
-      .form-wrapper form .grid-section .exp-date .input-wrapper input {
-        width: 3rem; }
+      .form-wrapper form .grid-section .exp-date .input-wrapper {
+        display: flex;
+        gap: 1rem; }
+        .form-wrapper form .grid-section .exp-date .input-wrapper input {
+          width: 5rem; }
   .form-wrapper aside {
     flex-direction: column;
     align-items: center;
@@ -100,24 +119,59 @@ button {
       .form-wrapper aside .message p {
         color: #8e8593; }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 650px) {
+  .card-header .card-container {
+    max-width: 80%; }
+    .card-header .card-container .back-card {
+      right: 2rem;
+      top: 2rem; }
+    .card-header .card-container .front-card {
+      left: 2rem;
+      top: 2rem; } }
+
+@media screen and (min-width: 1024px) {
   main {
     display: grid;
-    grid-template-columns: 40% 60%; }
+    grid-template-columns: 30% 70%;
+    gap: 2rem; }
   .card-header {
     background-image: url(../images/bg-main-desktop.png);
     height: 100vh; }
     .card-header .card-container .back-card, .card-header .card-container .front-card {
       background-size: cover;
-      width: 35rem;
-      height: 17rem; }
+      width: 23rem;
+      height: 13rem; }
     .card-header .card-container .back-card {
       top: 28rem;
       left: 5rem; }
+      .card-header .card-container .back-card .cvv {
+        top: 6rem; }
     .card-header .card-container .front-card {
-      top: 5rem;
-      left: 0; }
+      top: 13rem;
+      left: 0;
+      left: 1rem; }
+      .card-header .card-container .front-card-content {
+        margin: 1rem 2rem; }
+        .card-header .card-container .front-card-content .circle-container {
+          padding-bottom: 3rem; }
+          .card-header .card-container .front-card-content .circle-container img {
+            width: 4rem; }
+        .card-header .card-container .front-card-content .card-number {
+          text-align: left; }
   .form-wrapper {
     width: 25rem;
-    margin: 8rem auto;
+    margin: 14rem auto;
     padding: 0 5rem; } }
+
+@media screen and (min-width: 1200px) {
+  .card-header .card-container .back-card, .card-header .card-container .front-card {
+    width: 27rem;
+    height: 14rem;
+    transition: all 350ms ease-in-out; }
+  .card-header .card-container .back-card {
+    left: 9rem; }
+    .card-header .card-container .back-card .cvv {
+      top: 6.8rem;
+      right: 3rem; }
+  .card-header .card-container .front-card {
+    left: 5rem; } }
