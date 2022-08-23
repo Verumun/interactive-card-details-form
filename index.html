@@ -61,7 +61,7 @@
         <div class="card-holder">
           <h3>cardholder name</h3>
           <div class="input-control">
-            <input type="text" placeholder="e.g. Jane Appleseed">
+            <input class="name-input" type="text" placeholder="e.g. Jane Appleseed">
           </div>
         </div>
 
@@ -69,7 +69,7 @@
         <div class="card-number">
           <h3>card number</h3>
           <div class="input-control">
-            <input type="number" placeholder="e.g. 1234 5678 9123 0000">
+            <input class="creditcard" type="text" placeholder="e.g. 1234 5678 9123 0000">
             <div class="error-text"></div>
           </div>
         </div>
@@ -85,12 +85,12 @@
             <!-- MM -->
             <div class="input-wrapper">
               <div class="input-control">
-                <input type="number" placeholder="MM">
+                <input class="monthInput" id="monthInput" type="text" placeholder="MM" maxlength="2" size="2" onkeyup="autoJump(this, 'yearInput')">
               </div>
   
               <!-- YY -->
               <div class="input-control">
-                <input type="number" placeholder="YY">
+                <input class="yearInput" id="yearInput" type="text" placeholder="YY" maxlength="2" onkeyup="autoJump(this, 'cvvInput')">
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
           <div class="cvv-input">
             <h3>CVC</h3>
             <div class="input-control">
-              <input type="number" placeholder="e.g. 123">
+              <input type="text" class="cvvInput" id="cvvInput" placeholder="e.g. 123" maxlength="3" size="3" onkeyup="autoJump(this, 'monthInput')">
             </div>
           </div>
         </div>
@@ -131,5 +131,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="javascript/cleave.js"></script>
+  <script src="javascript/main.js"></script>
 </body>
 </html>
